@@ -102,24 +102,14 @@ businessIDWTC = businessWTC["businesses"][0]["id"]
 
 REVIEW_PATH = '/v3/businesses/' + businessIDTS + '/reviews'
 
-businessTSR = requestYelpReview(API_HOST, businessIDTS, MY_API_KEY)
-reviewTS = businessTSR["reviews"]
-businessSLR = requestYelpReview(API_HOST, businessIDSL, MY_API_KEY)
-reviewSL = businessSLR["reviews"]
-businessESR = requestYelpReview(API_HOST, businessIDES, MY_API_KEY)
-reviewES = businessESR["reviews"]
-businessLIR = requestYelpReview(API_HOST, businessIDLI, MY_API_KEY)
-reviewLI = businessLIR["reviews"]
-businessRCR = requestYelpReview(API_HOST, businessIDRC, MY_API_KEY)
-reviewRC = businessRCR["reviews"]
-businessCPR = requestYelpReview(API_HOST, businessIDCP, MY_API_KEY)
-reviewCP = businessCPR["reviews"]
-businessMBR = requestYelpReview(API_HOST, businessIDMB, MY_API_KEY)
-reviewMB = businessMBR["reviews"]
-businessCIR = requestYelpReview(API_HOST, businessIDCI, MY_API_KEY)
-reviewCI = businessCIR["reviews"]
-businessWTCR = requestYelpReview(API_HOST, businessIDWTC, MY_API_KEY)
-reviewWTC = businessWTCR["reviews"]
+
+
+
+
+
+
+
+
 
 @app.route('/')
 @app.route('/index')
@@ -139,38 +129,56 @@ def places():
 
 @app.route('/TSReviews')
 def TSReviews():
+    businessTSR = requestYelpReview(API_HOST, businessIDTS, MY_API_KEY)
+    reviewTS = businessTSR["reviews"]
     return render_template('TimesSquare.html', businessTSR = businessTSR, reviewTS = reviewTS)
     
 @app.route('/SLReviews')
 def SLReviews():
+    businessSLR = requestYelpReview(API_HOST, businessIDSL, MY_API_KEY)
+    reviewSL = businessSLR["reviews"]
     return render_template('Liberty.html', businessSLR = businessSLR, reviewSL = reviewSL)
 
 @app.route('/LIReviews')
 def LIReviews():
+    businessLIR = requestYelpReview(API_HOST, businessIDLI, MY_API_KEY)
+    reviewLI = businessLIR["reviews"]
     return render_template('LittleItaly.html', businessLIR = businessLIR, reviewLI = reviewLI)
     
 @app.route('/ESReviews')
 def ESReviews():
+    businessESR = requestYelpReview(API_HOST, businessIDES, MY_API_KEY)
+    reviewES = businessESR["reviews"]
     return render_template('EmpireState.html', businessESR = businessESR, reviewES = reviewES)
     
 @app.route('/RCReviews')
 def RCReviews():
+    businessRCR = requestYelpReview(API_HOST, businessIDRC, MY_API_KEY)
+    reviewRC = businessRCR["reviews"]
     return render_template('Rockefeller.html', businessRCR = businessRCR, reviewRC = reviewRC)
     
 @app.route('/CPReviews')
 def CPReviews():
+    businessCPR = requestYelpReview(API_HOST, businessIDCP, MY_API_KEY)
+    reviewCP = businessCPR["reviews"]
     return render_template('CentralPark.html', businessCPR = businessCPR, reviewCP = reviewCP)
     
 @app.route('/MBReviews')
 def MBReviews():
+    businessMBR = requestYelpReview(API_HOST, businessIDMB, MY_API_KEY)
+    reviewMB = businessMBR["reviews"]
     return render_template('Magnolia.html', businessMBR = businessMBR, reviewMB = reviewMB)
 
 @app.route('/CIReviews')
 def CIReviews():
+    businessCIR = requestYelpReview(API_HOST, businessIDCI, MY_API_KEY)
+    reviewCI = businessCIR["reviews"]
     return render_template('ConeyIsland.html', businessCIR = businessCIR, reviewCI = reviewCI)
     
 @app.route('/WTCReviews')
 def WTCReviews():
+    businessWTCR = requestYelpReview(API_HOST, businessIDWTC, MY_API_KEY)
+    reviewWTC = businessWTCR["reviews"]
     return render_template('wtc.html', businessWTCR = businessWTCR, reviewWTC = reviewWTC)
 
 
