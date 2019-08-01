@@ -177,12 +177,14 @@ def WTCReviews():
 @app.route('/submittrap')
 def submittrap():
     # connect to the database
-    place = mongo.db.touristtrap
+    places = mongo.db.touristtrap
+    place = places.find({})
     
     # insert new data
     
     # return a message to the user
-    return render_template('submittrap.html')
+    print(place)
+    return render_template('submittrap.html', place=place)
     
 @app.route('/test')
 def test():
@@ -194,8 +196,11 @@ def locationAdded():
         userData = dict(request.form)
         placeName = userData["placeName"]
         placeLocation = userData["placeLocation"]
+        userName = userData["userName"]
+        userReview = userData["userReview"]
+        userRating = userData["userRating"]
         collection = mongo.db.touristtrap
-        collection.insert({'placeName':placeName, 'placeLocation':placeLocation})
+        collection.insert({'placeName':placeName, 'placeLocation':placeLocation, 'userName':userName, 'userReview':userReview, 'userRating':userRating})
         return render_template("locationAdded.html")
     else:
         return "Please fill out the form."
