@@ -202,6 +202,7 @@ def test():
 def locationAdded():
     if request.method == "POST":
         userData = dict(request.form)
+        # userImg = dict(request.file)
         placeName = userData["placeName"]
         placeLocation = userData["placeLocation"]
         userName = userData["userName"]
